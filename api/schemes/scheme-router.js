@@ -23,7 +23,15 @@ const router = express.Router()
     // etc
   ]
  */
-router.get('/', (req, res, next) => {
+// router.get('/',async (req, res, next) => {
+//   // res.json({message: "[GET] schemes"})
+//   try{
+//     const schemes = await Schemes.find()
+//     res.json(schemes)
+//   }catch(err){
+//     next(err)
+//   }
+  router.get('/', (req, res, next) => {
   Schemes.find()
     .then(schemes => {
       res.json(schemes)
@@ -52,6 +60,8 @@ router.get('/', (req, res, next) => {
     ]
   }
 */
+
+// http post :9000/api/schemes scheme_name=aaa
 router.get('/:scheme_id', checkSchemeId, (req, res, next) => {
   const { scheme_id } = req.params
 

@@ -4,9 +4,6 @@ const SchemeRouter = require('./schemes/scheme-router.js');
 
 const server = express();
 
-server.get('/hello', (req, res) => {
-    res.status(200).json('hello world!!!!!!')
-  })
 
 server.use(express.json());
 server.use('/api/schemes', SchemeRouter);
