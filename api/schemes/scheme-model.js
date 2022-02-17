@@ -133,7 +133,7 @@ async function findById(scheme_id) { // EXERCISE B
       //   },[])
       // }
 
-      // way 2
+      //way 2
       const result = {
         scheme_id: rows[0].scheme_id,
         scheme_name: rows[0].scheme_name,
@@ -149,6 +149,24 @@ async function findById(scheme_id) { // EXERCISE B
         }
       })
       return result
+
+  
+    
+      // way 3
+    // const result = { steps: [] };
+  
+    // rows.map(scheme => {
+    //   result.scheme_id = scheme.scheme_id
+    //   result.scheme_name = scheme.scheme_name
+    //   if (scheme.step_id) {
+    //     result.steps.push({
+    //       step_id: scheme.step_id,
+    //       step_number: scheme.step_number,
+    //       instructions: scheme.instructions
+    //     })
+    //   }
+    // })
+    // return result
 }
 //  http get :9000/api/schemes/1/steps
 function findSteps(scheme_id) { // EXERCISE C
